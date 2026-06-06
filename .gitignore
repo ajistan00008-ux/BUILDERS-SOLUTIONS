@@ -8,3 +8,6 @@ next-env.d.ts
 .env*.local
 .DS_Store
 *.tsbuildinfo
+
+# Heavy source catalogues/notes — not for the repo
+/public/img/builders solutions - WEBSITE pRODUCTS/

@@ -9,8 +9,9 @@ import { ArrowRight } from './icons';
 import { CORE_FOCUS_LINE } from '../content/products';
 
 export function Products() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const p = t.products;
+  const catLabel = lang === 'ar' ? 'تحميل الكتالوج' : 'Download Catalogue';
 
   // image + verified specs come from content/products.ts, keyed by id
   const meta = Object.fromEntries(CORE_FOCUS_LINE.map((x) => [x.id, x]));
@@ -40,6 +41,8 @@ export function Products() {
                 specs={meta[item.id]?.specifications || []}
                 comingSoon={t.comingSoon}
                 highlight={item.id === 'stern-touchless'}
+                catalogue={meta[item.id]?.catalogue}
+                catalogueLabel={catLabel}
               />
             </Reveal>
           ))}
@@ -50,8 +53,8 @@ export function Products() {
 }
 
 function ProductCard({
-  title, desc, image, specs, comingSoon, highlight,
-}: { title: string; desc: string; image: string; specs: string[]; comingSoon: string; highlight?: boolean }) {
+  title, desc, image, specs, comingSoon, highlight, catalogue, catalogueLabel,
+}: { title: string; desc: string; image: string; specs: string[]; comingSoon: string; highlight?: boolean; catalogue?: string; catalogueLabel?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const rx = useMotionValue(0);
   const ry = useMotionValue(0);
@@ -97,6 +100,17 @@ function ProductCard({
                 </li>
               ))}
             </ul>
+          )}
+          {catalogue && (
+            <a
+              href={catalogue}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="mt-4 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-wide text-brand-gold hover:text-brand-gold2 transition-colors"
+            >
+              ⤓ {catalogueLabel}
+            </a>
           )}
         </div>
       </div>
