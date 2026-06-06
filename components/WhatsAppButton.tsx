@@ -4,9 +4,8 @@ import React from 'react';
 import { useLang } from '../lib/providers';
 import { WhatsApp } from './icons';
 
-// TODO: replace with your real WhatsApp number in international format,
-// digits only, no '+' or spaces (e.g. 971501234567).
-const WHATSAPP_NUMBER = '0000000000';
+// Builders Solutions WhatsApp (Bahrain), international format, digits only.
+const WHATSAPP_NUMBER = '97334685656';
 
 export function WhatsAppButton() {
   const { t, dir } = useLang();

@@ -1,28 +1,30 @@
 // ============================================================================
-// PRODUCT METADATA — THE BUILDERS SOLUTIONS
-// ----------------------------------------------------------------------------
-// Bilingual titles & descriptions live in lib/i18n.tsx (keyed by id).
-// This file holds the IMAGE (group Sanity CDN) and verified SPECS per id.
-// Brand attribution preserved from the group catalogue.
+// PRODUCT METADATA — BUILDERS SOLUTIONS
+// Titles & descriptions (bilingual) live in lib/i18n.tsx, keyed by id.
+// This file holds the IMAGE and material SPECS for each product id.
+// Images match BS_Website_FINAL_LIVE.html (Unsplash); swap for owned photos
+// when available. Materials are from the group product data.
 // ============================================================================
 
-const SANITY = 'https://cdn.sanity.io/images/ffdvrpe4/production';
+const U = (id: string) => `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=900&q=80`;
 
 export interface StructuralProduct {
   id: string;
   image: string;
-  brandPartner: string;
   specifications: string[];
 }
 
 export const CORE_FOCUS_LINE: StructuralProduct[] = [
-  { id: 'expansion-joints', brandPartner: 'BCR UK LTD', image: `${SANITY}/4ca212004d4b528e898c9d0e257a1cac9391ba91-1080x1080.jpg`, specifications: [] },
-  { id: 'movement-joints', brandPartner: 'BCR UK LTD', image: `${SANITY}/4b056343921a90be1e3a40963df67531d5683deb-1080x1080.jpg`, specifications: [] },
-  { id: 'expansion-joint-covers', brandPartner: 'BCR UK LTD', image: `${SANITY}/c3c510e20f5d47ea07b2afd1ce878e26bdf107ed-1080x1080.jpg`, specifications: [] },
-  { id: 'tile-trims', brandPartner: 'BCR UK LTD', image: `${SANITY}/f2620d4bdd3a45eafa59fdde2570d81ff39c9848-1080x1080.jpg`, specifications: [] },
-  { id: 'skirting', brandPartner: 'Builders Solutions', image: `${SANITY}/54660064a5d18a51c8f74bca1f62321ac3e5d4e8-1080x1080.jpg`, specifications: [] },
-  { id: 'stair-nosing', brandPartner: 'Builders Solutions', image: `${SANITY}/01bfa93cf44806dbf8bd413d044537e743ad9b07-3307x3307.jpg`, specifications: [] },
-  { id: 'corner-guards', brandPartner: 'Builders Solutions', image: `${SANITY}/43264a69c870c3dc49560c42cc2555a9bfbe896e-3307x3307.jpg`, specifications: [] },
-  { id: 'wall-guards', brandPartner: 'Builders Solutions', image: `${SANITY}/2b47076f04580f4eff827832748eae14b1aa44ed-3307x3307.jpg`, specifications: [] },
-  { id: 'hand-rails', brandPartner: 'Builders Solutions', image: `${SANITY}/05af0d7052534fc53308365ca07c9a605b365c7b-3307x3307.jpg`, specifications: [] },
+  { id: 'tile-trims', image: U('1558618666-fcd25c85cd64'), specifications: ['Aluminium', 'SS304', 'SS316', 'Brass'] },
+  { id: 'expansion-joints', image: U('1504307651254-35680f356dfd'), specifications: ['Aluminium', 'Stainless Steel', 'Neoprene', 'EPDM'] },
+  { id: 'stern-touchless', image: U('1497366811353-6870744d04b2'), specifications: ['HPL 42mm', 'Aluminium 6063', 'SS Hardware'] },
+  { id: 'wall-guards', image: U('1541123437800-1bb1317badc2'), specifications: ['Aluminium', 'PVC', 'Stainless Steel', 'HDPE'] },
+  { id: 'bollards', image: U('1587560699334-cc4ff634909a'), specifications: ['SS316', 'Cast Iron', 'Carbon Steel'] },
+  { id: 'metal-panels', image: U('1486325212027-8081e485255e'), specifications: ['Aluminium Composite', 'GRP', 'Solid Aluminium'] },
+  { id: 'led-profiles', image: U('1524758631624-e2822e304c36'), specifications: ['Aluminium 6063 T5', 'Polycarbonate'] },
+  { id: 'skylights', image: U('1501183638710-841dd1904471'), specifications: ['Aluminium Frame', 'Polycarbonate', 'PMMA', 'Safety Glass'] },
+  { id: 'hpl', image: U('1558618047-3c8c76ca7d13'), specifications: ['High Pressure Laminate', 'Compact Grade'] },
+  { id: 'flooring', image: U('1556909114-f6e7ad7d3136'), specifications: ['Vinyl', 'Epoxy Resin', 'Rubber', 'Carpet'] },
+  { id: 'defense', image: U('1508614589041-895b88991e3e'), specifications: ['Armour Steel', 'GRP', 'Ballistic Glass'] },
+  { id: 'oilgas', image: U('1518709268805-4e9042af9f23'), specifications: ['GRP', 'Carbon Steel', 'SS316L', 'HDPE'] },
 ];

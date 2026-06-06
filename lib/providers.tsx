@@ -35,7 +35,7 @@ interface LangCtx {
 const LanguageContext = createContext<LangCtx | null>(null);
 
 export function Providers({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('light');
+  const [theme, setTheme] = useState<Theme>('dark'); // dark-first, matches brand
   const [lang, setLangState] = useState<Lang>('en');
 
   // Hydrate from localStorage once on mount
@@ -43,8 +43,6 @@ export function Providers({ children }: { children: React.ReactNode }) {
     const storedTheme = localStorage.getItem('tbs-theme') as Theme | null;
     const storedLang = localStorage.getItem('tbs-lang') as Lang | null;
     if (storedTheme) setTheme(storedTheme);
-    else if (window.matchMedia('(prefers-color-scheme: dark)').matches)
-      setTheme('dark');
     if (storedLang) setLangState(storedLang);
   }, []);
 

@@ -48,16 +48,12 @@ export function Header() {
     >
       <div className="max-w-7xl mx-auto px-5 md:px-10 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <span className="w-9 h-9 rounded-md bg-gradient-to-br from-brand-gold to-brand-goldDark flex items-center justify-center font-black text-white text-sm">
-            TBS
+          <span className="w-9 h-9 rounded-md bg-gradient-to-br from-brand-gold to-brand-goldDark flex items-center justify-center font-display text-brand-ink text-xl leading-none pt-1">
+            BS
           </span>
-          <span className="flex flex-col leading-none">
-            <span className={`font-extrabold tracking-tight text-sm uppercase ${solid ? 'text-brand-ink dark:text-white' : 'text-white'}`}>
-              The Builders
-            </span>
-            <span className="text-[8px] tracking-[0.35em] uppercase font-bold mt-0.5 text-brand-gold">
-              Solutions
-            </span>
+          <span className="flex items-baseline gap-1.5 font-display text-2xl leading-none">
+            <span className={solid ? 'text-brand-ink dark:text-white' : 'text-white'}>BUILDERS</span>
+            <span className="text-brand-gold">SOLUTIONS</span>
           </span>
         </Link>
 

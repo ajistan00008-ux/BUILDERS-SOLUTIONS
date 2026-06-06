@@ -1,12 +1,6 @@
 // ============================================================================
-// BILINGUAL CONTENT — THE BUILDERS SOLUTIONS  (English + Arabic)
-// ----------------------------------------------------------------------------
-// This is the single source of truth for ALL on-page text, in both languages.
-// Edit values here to change copy. Every English string has an Arabic match.
-//
-// PLACEHOLDER NOTICE: stats, projects, testimonials, partners and news below
-// are EDITABLE PLACEHOLDERS — not verified facts. Replace with real TBS data
-// before going live. Do not publish invented numbers, clients, or partners.
+// BILINGUAL CONTENT — BUILDERS SOLUTIONS (English + Arabic)
+// Real data folded in from BS_Website_FINAL_LIVE.html (group site).
 // ============================================================================
 
 export type Lang = 'en' | 'ar';
@@ -18,6 +12,7 @@ export interface Dictionary {
     news: string; contact: string; getQuote: string;
   };
   hero: { kicker: string; titleTop: string; titleBottom: string; lead: string; ctaPrimary: string; ctaSecondary: string }[];
+  ticker: string[];
   stats: { value: string; label: string }[];
   about: { kicker: string; title: string; p1: string; p2: string; cta: string; badgeValue: string; badgeLabel: string };
   services: { kicker: string; title: string; subtitle: string; items: { title: string; desc: string }[] };
@@ -36,41 +31,41 @@ export interface Dictionary {
   comingSoon: string;
 }
 
+const TICKER = ['Tile Trims', 'Expansion Joints', 'Stern Touchless Cubicles', 'Metal Panels', 'SS Bollards', 'Skylights', 'Wall Guards', 'HPL Laminates', 'LED Profiles', 'Acoustic Pods', 'Stair Nosing', 'Benkiser Germany'];
+
 const en: Dictionary = {
   nav: {
-    home: 'Home', about: 'About Us', services: 'Services', projects: 'Projects',
-    products: 'Products', industries: 'Industries', locations: 'Locations',
+    home: 'Home', about: 'About', services: 'Services', projects: 'Projects',
+    products: 'Products', industries: 'Industries', locations: 'Companies',
     careers: 'Careers', news: 'News', contact: 'Contact', getQuote: 'Get a Quote',
   },
   hero: [
-    { kicker: 'Building Beyond Limits', titleTop: 'Strong Foundations.', titleBottom: 'Endless Possibilities.', lead: 'The Builders Solutions delivers integrated construction-component supply that builds stronger projects and a better future.', ctaPrimary: 'Explore Products', ctaSecondary: 'Our Story' },
-    { kicker: 'Engineered to Specification', titleTop: 'Quality Components.', titleBottom: 'Trusted Performance.', lead: 'Architectural and structural building components supplied for commercial construction across the region.', ctaPrimary: 'View Range', ctaSecondary: 'Contact Us' },
-    { kicker: 'From Concept to Completion', titleTop: 'Built to Last.', titleBottom: 'Delivered on Time.', lead: 'Reliable supply, accurate specifications, and support at every stage of your project.', ctaPrimary: 'Request a Quote', ctaSecondary: 'Learn More' },
+    { kicker: 'Premium Construction Finishing Materials', titleTop: 'Builders', titleBottom: 'Solutions Group', lead: 'Multinational supplier of premium construction finishing materials across Bahrain, UAE, Saudi Arabia and the USA.', ctaPrimary: 'Explore Products', ctaSecondary: 'Contact Us' },
+    { kicker: 'Official Middle East Distributor', titleTop: 'Stern', titleBottom: 'Touchless Cubicles', lead: 'Zero-contact WC cubicle systems — hygienic, sensor-operated, engineered for commercial washrooms.', ctaPrimary: 'View Products', ctaSecondary: 'Get a Quote' },
+    { kicker: 'Trusted Since 2009', titleTop: 'Engineered.', titleBottom: 'Delivered on Time.', lead: 'Right products, full documentation, delivered on time across the GCC.', ctaPrimary: 'Request a Quote', ctaSecondary: 'Our Companies' },
   ],
+  ticker: TICKER,
   stats: [
-    { value: '00+', label: 'Years Experience' },
-    { value: '000+', label: 'Projects Supplied' },
-    { value: '00+', label: 'Product Lines' },
-    { value: '00+', label: 'Team Members' },
-    { value: '0+', label: 'Locations' },
+    { value: '15+', label: 'Years Experience' },
+    { value: '5', label: 'Group Companies' },
+    { value: '4', label: 'Countries' },
+    { value: 'GCC', label: 'Regional Reach' },
   ],
   about: {
-    kicker: 'About The Builders Solutions',
-    title: 'We Turn Vision Into Reality',
-    p1: 'The Builders Solutions supplies architectural and structural building components across residential, commercial, industrial and infrastructure projects.',
-    p2: 'With a commitment to quality, accuracy and reliable delivery, we help build more than structures — we build trust.',
-    cta: 'Learn More About Us', badgeValue: '00+', badgeLabel: 'Years of Excellence',
+    kicker: 'Who We Are',
+    title: 'Builders Solutions Group',
+    p1: 'A multinational group specialising in premium construction finishing materials, modular solutions, fabrication and civil construction. Operating across Bahrain, UAE, Saudi Arabia and the USA since 2009.',
+    p2: 'Our group companies serve architectural, industrial, defense and Oil & Gas sectors.',
+    cta: 'Contact Our Team', badgeValue: '15+', badgeLabel: 'Years of Excellence',
   },
   services: {
-    kicker: 'What We Do',
-    title: 'End-to-End Component Supply',
-    subtitle: 'From specification to delivery, we add value at every stage of your project.',
+    kicker: 'Services',
+    title: 'What We Offer',
+    subtitle: 'Right products, full documentation, delivered on time across the GCC.',
     items: [
-      { title: 'Product Supply', desc: 'Architectural and structural components sourced and supplied to spec.' },
-      { title: 'Technical Support', desc: 'Specification guidance and product selection for your project requirements.' },
-      { title: 'Project Delivery', desc: 'Reliable, scheduled delivery to keep your site on track.' },
-      { title: 'Custom Solutions', desc: 'Made-to-measure profiles and components for specific applications.' },
-      { title: 'After-Sales', desc: 'Ongoing support, spares and service after installation.' },
+      { title: 'Material Supply', desc: 'Direct import from certified manufacturers. Full TDS, DWG, test reports and MAC sheets with every delivery.' },
+      { title: 'Technical Consultation', desc: 'BOQ preparation, shop drawing review and product selection — from tender through completion.' },
+      { title: 'Installation', desc: 'Full installation and civil works through Allied Gulf Construction Services (AGCS) in Bahrain.' },
     ],
   },
   projects: {
@@ -86,19 +81,22 @@ const en: Dictionary = {
     },
   },
   products: {
-    kicker: 'Our Range',
+    kicker: 'Our Product Range',
     title: 'Quality Products. Trusted Performance.',
-    viewAll: 'View All Products',
+    viewAll: 'Request a Quote',
     items: [
-      { id: 'expansion-joints', title: 'Expansion Joints', desc: 'Structural expansion joints for buildings, parking and infrastructure.' },
-      { id: 'movement-joints', title: 'Movement Joints', desc: 'Tile movement joints for floors, walls and façades.' },
-      { id: 'expansion-joint-covers', title: 'Expansion Joint Covers', desc: 'Architectural covers across floors, walls, ceilings and roofs.' },
-      { id: 'tile-trims', title: 'Tile Trims', desc: 'Stainless steel and metal tile trims for clean edges and transitions.' },
-      { id: 'skirting', title: 'Skirting', desc: 'Hygienic, impact-resistant skirting profiles.' },
-      { id: 'stair-nosing', title: 'Stair Nosing', desc: 'Anti-slip stair nosings for safety and longevity.' },
-      { id: 'corner-guards', title: 'Corner Guards', desc: 'Corner protection for high-traffic walls and circulation routes.' },
-      { id: 'wall-guards', title: 'Wall Guards', desc: 'Continuous wall protection systems for hospitals, schools and retail.' },
-      { id: 'hand-rails', title: 'Hand Rails', desc: 'Engineered handrails for healthcare, transit and public spaces.' },
+      { id: 'tile-trims', title: 'Tile Trims', desc: 'Precision edge-protection profiles for tiled walls and floors — clean transitions and corner protection.' },
+      { id: 'expansion-joints', title: 'Expansion Joints', desc: 'Structural and architectural expansion joint systems for floors, walls and façades.' },
+      { id: 'stern-touchless', title: 'Stern Touchless', desc: 'Official Middle East distributor — zero-contact WC cubicle systems with sensor flushing.' },
+      { id: 'wall-guards', title: 'Wall Guards', desc: 'Impact-resistant wall and corner protection for hospitals, schools and high-traffic spaces.' },
+      { id: 'bollards', title: 'SS Bollards', desc: 'Security-grade stainless steel bollards — fixed, removable and PAS 68 anti-ram options.' },
+      { id: 'metal-panels', title: 'Metal Panels', desc: 'Aluminium composite and solid metal panels for façades and ceiling systems.' },
+      { id: 'led-profiles', title: 'LED Profiles', desc: 'Architectural aluminium LED channel profiles with diffusers for linear lighting.' },
+      { id: 'skylights', title: 'Skylights', desc: 'Aluminium-framed skylights and roof glazing in polycarbonate, PMMA and safety glass.' },
+      { id: 'hpl', title: 'HPL Laminates', desc: 'High-pressure laminate and compact-grade panels for cubicles, lockers and cladding.' },
+      { id: 'flooring', title: 'Flooring Systems', desc: 'Vinyl, epoxy resin, rubber and carpet flooring systems for every environment.' },
+      { id: 'defense', title: 'Defense Products', desc: 'Armoured steel, GRP and ballistic glass solutions for defense and security projects.' },
+      { id: 'oilgas', title: 'Oil & Gas', desc: 'GRP, carbon steel, SS316L and HDPE products engineered for oil & gas applications.' },
     ],
   },
   partners: {
@@ -108,26 +106,25 @@ const en: Dictionary = {
     note: 'Add your real partner logos to /public/partners — do not list a brand you are not authorised to represent.',
   },
   presence: {
-    kicker: 'Our Presence',
-    title: 'Regional Reach. Local Expertise.',
-    viewAll: 'View All Locations', locationsLabel: 'Locations',
+    kicker: 'Group Companies',
+    title: 'Our Companies',
+    viewAll: 'Contact Us', locationsLabel: 'Companies',
     items: [
-      { country: 'Country 1', projects: '0 Projects' },
-      { country: 'Country 2', projects: '0 Projects' },
-      { country: 'Country 3', projects: '0 Projects' },
-      { country: 'Country 4', projects: '0 Projects' },
-      { country: 'Country 5', projects: '0 Projects' },
-      { country: 'Country 6', projects: '0 Projects' },
+      { country: 'Builders Solutions Inc.', projects: 'USA · +1 901-850-4031' },
+      { country: 'Builders Solutions FZ LLC', projects: 'UAE · +971 50 477 8537' },
+      { country: 'Emaar Builders Solutions', projects: 'Bahrain · +973 3468 5656' },
+      { country: 'Allied Gulf Construction W.L.L', projects: 'Bahrain · alliedgulf.me' },
+      { country: 'Gulf Construction Solutions L.L.C', projects: 'Saudi Arabia · gcs.sa' },
     ],
   },
   why: {
     kicker: 'Why Choose Us',
-    title: 'Why The Builders Solutions',
+    title: 'Why Builders Solutions',
     items: [
-      { title: 'Quality First', desc: 'Components supplied to verified specification.' },
-      { title: 'Reliable Delivery', desc: 'On-time supply that keeps projects moving.' },
-      { title: 'Technical Expertise', desc: 'Guidance from specification to installation.' },
-      { title: 'Customer Focused', desc: 'Your project success is our priority.' },
+      { title: 'Certified Supply', desc: 'Direct import from certified manufacturers with full documentation.' },
+      { title: 'Regional Reach', desc: 'Delivery and support across Bahrain, UAE, Saudi Arabia and the USA.' },
+      { title: 'Technical Expertise', desc: 'Guidance from tender and BOQ through to installation.' },
+      { title: 'On-Time Delivery', desc: 'Reliable supply that keeps your project on schedule.' },
     ],
   },
   testimonials: {
@@ -151,15 +148,15 @@ const en: Dictionary = {
     ],
   },
   cta: {
-    title: "Let's Build Something Extraordinary Together",
-    text: 'Have a project in mind? We would love to hear about it.',
-    button: 'Get in Touch',
+    title: 'Ready to Start Your Project?',
+    text: 'Talk to our team — right products, full documentation, delivered on time across the GCC.',
+    button: 'Request a Quote',
   },
   footer: {
-    tagline: 'Supplying architectural and structural building components for commercial construction projects.',
+    tagline: 'Multinational supplier of premium construction finishing materials. Bahrain · UAE · Saudi Arabia · USA.',
     quickLinks: 'Quick Links', servicesCol: 'Services', productsCol: 'Products',
-    locationsCol: 'Locations', contactCol: 'Contact Us', rights: 'All rights reserved.',
-    headOffice: 'Head Office', address: '[Address line — replace]', phone: '+000 000 0000', email: 'hello@thebuilderssolutions.com',
+    locationsCol: 'Companies', contactCol: 'Contact Us', rights: 'All rights reserved.',
+    headOffice: 'Head Office — Bahrain', address: 'Bahrain · UAE · Saudi Arabia · USA', phone: '+973 3468 5656', email: 'trade@thebuilderssolutions.com',
   },
   chat: {
     title: 'Builders Assistant', greeting: 'Hello! Ask me about our products, services or how to request a quote.',
@@ -173,38 +170,36 @@ const en: Dictionary = {
 const ar: Dictionary = {
   nav: {
     home: 'الرئيسية', about: 'من نحن', services: 'الخدمات', projects: 'المشاريع',
-    products: 'المنتجات', industries: 'القطاعات', locations: 'المواقع',
+    products: 'المنتجات', industries: 'القطاعات', locations: 'الشركات',
     careers: 'الوظائف', news: 'الأخبار', contact: 'اتصل بنا', getQuote: 'اطلب عرض سعر',
   },
   hero: [
-    { kicker: 'نبني بلا حدود', titleTop: 'أساسات قوية.', titleBottom: 'إمكانيات لا حدود لها.', lead: 'تقدّم «ذا بيلدرز سوليوشنز» توريداً متكاملاً لمكوّنات البناء لبناء مشاريع أقوى ومستقبل أفضل.', ctaPrimary: 'استكشف المنتجات', ctaSecondary: 'قصتنا' },
-    { kicker: 'مصمّمة وفق المواصفات', titleTop: 'مكوّنات عالية الجودة.', titleBottom: 'أداء موثوق.', lead: 'مكوّنات بناء معمارية وإنشائية تُورَّد لمشاريع البناء التجارية في المنطقة.', ctaPrimary: 'تصفّح المجموعة', ctaSecondary: 'اتصل بنا' },
-    { kicker: 'من الفكرة إلى الإنجاز', titleTop: 'بناء يدوم.', titleBottom: 'تسليم في الوقت المحدد.', lead: 'توريد موثوق ومواصفات دقيقة ودعم في كل مرحلة من مراحل مشروعك.', ctaPrimary: 'اطلب عرض سعر', ctaSecondary: 'اعرف المزيد' },
+    { kicker: 'مواد تشطيب بناء فاخرة', titleTop: 'بيلدرز', titleBottom: 'سوليوشنز جروب', lead: 'مورّد متعدد الجنسيات لمواد تشطيب البناء الفاخرة في البحرين والإمارات والسعودية والولايات المتحدة.', ctaPrimary: 'استكشف المنتجات', ctaSecondary: 'اتصل بنا' },
+    { kicker: 'الموزّع الرسمي في الشرق الأوسط', titleTop: 'ستيرن', titleBottom: 'كبائن لمسية', lead: 'أنظمة كبائن دورات مياه بدون لمس — صحية تعمل بالحساسات ومصمّمة للحمامات التجارية.', ctaPrimary: 'تصفّح المنتجات', ctaSecondary: 'اطلب عرض سعر' },
+    { kicker: 'موثوق منذ 2009', titleTop: 'هندسة دقيقة.', titleBottom: 'تسليم في الوقت.', lead: 'المنتجات المناسبة وتوثيق كامل وتسليم في الوقت المحدد في جميع أنحاء الخليج.', ctaPrimary: 'اطلب عرض سعر', ctaSecondary: 'شركاتنا' },
   ],
+  ticker: TICKER,
   stats: [
-    { value: '+٠٠', label: 'سنوات الخبرة' },
-    { value: '+٠٠٠', label: 'مشاريع موردة' },
-    { value: '+٠٠', label: 'خطوط منتجات' },
-    { value: '+٠٠', label: 'أعضاء الفريق' },
-    { value: '+٠', label: 'المواقع' },
+    { value: '+15', label: 'سنوات الخبرة' },
+    { value: '5', label: 'شركات المجموعة' },
+    { value: '4', label: 'دول' },
+    { value: 'الخليج', label: 'الانتشار الإقليمي' },
   ],
   about: {
-    kicker: 'عن ذا بيلدرز سوليوشنز',
-    title: 'نحوّل الرؤية إلى واقع',
-    p1: 'تورّد «ذا بيلدرز سوليوشنز» مكوّنات البناء المعمارية والإنشائية للمشاريع السكنية والتجارية والصناعية والبنية التحتية.',
-    p2: 'بالتزامنا بالجودة والدقة والتسليم الموثوق، نساعد على بناء ما هو أكثر من منشآت — نبني الثقة.',
-    cta: 'اعرف المزيد عنّا', badgeValue: '+٠٠', badgeLabel: 'سنوات من التميّز',
+    kicker: 'من نحن',
+    title: 'بيلدرز سوليوشنز جروب',
+    p1: 'مجموعة متعددة الجنسيات متخصصة في مواد تشطيب البناء الفاخرة والحلول المعيارية والتصنيع والإنشاءات المدنية. تعمل في البحرين والإمارات والسعودية والولايات المتحدة منذ عام 2009.',
+    p2: 'تخدم شركات مجموعتنا القطاعات المعمارية والصناعية والدفاعية وقطاع النفط والغاز.',
+    cta: 'تواصل مع فريقنا', badgeValue: '+15', badgeLabel: 'سنوات من التميّز',
   },
   services: {
-    kicker: 'ماذا نقدّم',
-    title: 'توريد مكوّنات متكامل',
-    subtitle: 'من المواصفات إلى التسليم، نضيف قيمة في كل مرحلة من مشروعك.',
+    kicker: 'الخدمات',
+    title: 'ماذا نقدّم',
+    subtitle: 'المنتجات المناسبة وتوثيق كامل وتسليم في الوقت المحدد في جميع أنحاء الخليج.',
     items: [
-      { title: 'توريد المنتجات', desc: 'مكوّنات معمارية وإنشائية تُورَّد وفق المواصفات.' },
-      { title: 'الدعم الفني', desc: 'إرشاد في المواصفات واختيار المنتجات وفق متطلبات مشروعك.' },
-      { title: 'تسليم المشاريع', desc: 'تسليم موثوق ومجدول للحفاظ على سير موقعك.' },
-      { title: 'حلول مخصّصة', desc: 'قطاعات ومكوّنات حسب الطلب لتطبيقات محدّدة.' },
-      { title: 'خدمة ما بعد البيع', desc: 'دعم مستمر وقطع غيار وخدمة بعد التركيب.' },
+      { title: 'توريد المواد', desc: 'استيراد مباشر من مصنّعين معتمدين. مع كل توريد: ملفات TDS وDWG وتقارير الاختبار وأوراق MAC كاملة.' },
+      { title: 'الاستشارات الفنية', desc: 'إعداد جداول الكميات ومراجعة المخططات التنفيذية واختيار المنتجات — من المناقصة حتى الإنجاز.' },
+      { title: 'التركيب', desc: 'تركيب كامل وأعمال مدنية عبر شركة الخليج المتحالف للإنشاءات (AGCS) في البحرين.' },
     ],
   },
   projects: {
@@ -220,19 +215,22 @@ const ar: Dictionary = {
     },
   },
   products: {
-    kicker: 'مجموعتنا',
+    kicker: 'مجموعة منتجاتنا',
     title: 'منتجات عالية الجودة. أداء موثوق.',
-    viewAll: 'عرض كل المنتجات',
+    viewAll: 'اطلب عرض سعر',
     items: [
-      { id: 'expansion-joints', title: 'فواصل التمدد', desc: 'فواصل تمدد إنشائية للمباني والمواقف والبنية التحتية.' },
-      { id: 'movement-joints', title: 'فواصل الحركة', desc: 'فواصل حركة البلاط للأرضيات والجدران والواجهات.' },
-      { id: 'expansion-joint-covers', title: 'أغطية فواصل التمدد', desc: 'أغطية معمارية للأرضيات والجدران والأسقف والأسطح.' },
-      { id: 'tile-trims', title: 'زوايا البلاط', desc: 'زوايا بلاط من الستانلس ستيل والمعدن لحواف وانتقالات نظيفة.' },
-      { id: 'skirting', title: 'الوزرات', desc: 'وزرات صحية مقاومة للصدمات.' },
-      { id: 'stair-nosing', title: 'أنوف الدرج', desc: 'أنوف درج مانعة للانزلاق للسلامة وطول العمر.' },
-      { id: 'corner-guards', title: 'واقيات الزوايا', desc: 'حماية الزوايا للجدران وممرات الحركة كثيفة الاستخدام.' },
-      { id: 'wall-guards', title: 'واقيات الجدران', desc: 'أنظمة حماية جدران مستمرة للمستشفيات والمدارس والتجزئة.' },
-      { id: 'hand-rails', title: 'الدرابزين', desc: 'درابزينات مصمّمة للرعاية الصحية والنقل والأماكن العامة.' },
+      { id: 'tile-trims', title: 'زوايا البلاط', desc: 'قطاعات حماية حواف دقيقة للجدران والأرضيات المبلّطة — انتقالات نظيفة وحماية للزوايا.' },
+      { id: 'expansion-joints', title: 'فواصل التمدد', desc: 'أنظمة فواصل تمدد إنشائية ومعمارية للأرضيات والجدران والواجهات.' },
+      { id: 'stern-touchless', title: 'ستيرن اللمسية', desc: 'الموزّع الرسمي في الشرق الأوسط — أنظمة كبائن دورات مياه بدون لمس بحساسات تدفق.' },
+      { id: 'wall-guards', title: 'واقيات الجدران', desc: 'حماية جدران وزوايا مقاومة للصدمات للمستشفيات والمدارس والمساحات كثيفة الحركة.' },
+      { id: 'bollards', title: 'حواجز ستانلس', desc: 'حواجز ستانلس ستيل أمنية — ثابتة وقابلة للإزالة وخيارات مضادة للاقتحام PAS 68.' },
+      { id: 'metal-panels', title: 'الألواح المعدنية', desc: 'ألواح ألمنيوم مركّبة ومعدنية صلبة للواجهات وأنظمة الأسقف.' },
+      { id: 'led-profiles', title: 'قطاعات LED', desc: 'قطاعات ألمنيوم معمارية لإضاءة LED مع موزّعات للإضاءة الخطية.' },
+      { id: 'skylights', title: 'المناور', desc: 'مناور وزجاج أسقف بإطار ألمنيوم من البولي كربونات وPMMA والزجاج الأمني.' },
+      { id: 'hpl', title: 'ألواح HPL', desc: 'ألواح لامينيت عالية الضغط ومدمجة للكبائن والخزائن والكسوة.' },
+      { id: 'flooring', title: 'أنظمة الأرضيات', desc: 'أنظمة أرضيات من الفينيل والإيبوكسي والمطاط والسجاد لكل بيئة.' },
+      { id: 'defense', title: 'منتجات دفاعية', desc: 'حلول من الفولاذ المدرّع وGRP والزجاج المضاد للرصاص لمشاريع الدفاع والأمن.' },
+      { id: 'oilgas', title: 'النفط والغاز', desc: 'منتجات من GRP والفولاذ الكربوني وSS316L وHDPE مصمّمة لتطبيقات النفط والغاز.' },
     ],
   },
   partners: {
@@ -242,26 +240,25 @@ const ar: Dictionary = {
     note: 'أضف شعارات شركائك الحقيقيين إلى /public/partners — لا تُدرج علامة لست مخوّلاً بتمثيلها.',
   },
   presence: {
-    kicker: 'حضورنا',
-    title: 'انتشار إقليمي. خبرة محلية.',
-    viewAll: 'عرض كل المواقع', locationsLabel: 'المواقع',
+    kicker: 'شركات المجموعة',
+    title: 'شركاتنا',
+    viewAll: 'اتصل بنا', locationsLabel: 'الشركات',
     items: [
-      { country: 'الدولة ١', projects: '٠ مشاريع' },
-      { country: 'الدولة ٢', projects: '٠ مشاريع' },
-      { country: 'الدولة ٣', projects: '٠ مشاريع' },
-      { country: 'الدولة ٤', projects: '٠ مشاريع' },
-      { country: 'الدولة ٥', projects: '٠ مشاريع' },
-      { country: 'الدولة ٦', projects: '٠ مشاريع' },
+      { country: 'Builders Solutions Inc.', projects: 'الولايات المتحدة · +1 901-850-4031' },
+      { country: 'Builders Solutions FZ LLC', projects: 'الإمارات · +971 50 477 8537' },
+      { country: 'Emaar Builders Solutions', projects: 'البحرين · +973 3468 5656' },
+      { country: 'Allied Gulf Construction W.L.L', projects: 'البحرين · alliedgulf.me' },
+      { country: 'Gulf Construction Solutions L.L.C', projects: 'السعودية · gcs.sa' },
     ],
   },
   why: {
     kicker: 'لماذا نحن',
-    title: 'لماذا ذا بيلدرز سوليوشنز',
+    title: 'لماذا بيلدرز سوليوشنز',
     items: [
-      { title: 'الجودة أولاً', desc: 'مكوّنات تُورَّد وفق مواصفات موثّقة.' },
-      { title: 'تسليم موثوق', desc: 'توريد في الوقت المحدد يبقي المشاريع متقدّمة.' },
-      { title: 'خبرة فنية', desc: 'إرشاد من المواصفات إلى التركيب.' },
-      { title: 'التركيز على العميل', desc: 'نجاح مشروعك هو أولويتنا.' },
+      { title: 'توريد معتمد', desc: 'استيراد مباشر من مصنّعين معتمدين مع توثيق كامل.' },
+      { title: 'انتشار إقليمي', desc: 'توريد ودعم في البحرين والإمارات والسعودية والولايات المتحدة.' },
+      { title: 'خبرة فنية', desc: 'إرشاد من المناقصة وجداول الكميات حتى التركيب.' },
+      { title: 'تسليم في الوقت', desc: 'توريد موثوق يبقي مشروعك ضمن الجدول الزمني.' },
     ],
   },
   testimonials: {
@@ -285,15 +282,15 @@ const ar: Dictionary = {
     ],
   },
   cta: {
-    title: 'لنبنِ شيئاً استثنائياً معاً',
-    text: 'لديك مشروع في ذهنك؟ يسعدنا أن نسمع عنه.',
-    button: 'تواصل معنا',
+    title: 'هل أنت مستعد لبدء مشروعك؟',
+    text: 'تحدّث مع فريقنا — المنتجات المناسبة وتوثيق كامل وتسليم في الوقت المحدد في الخليج.',
+    button: 'اطلب عرض سعر',
   },
   footer: {
-    tagline: 'نورّد مكوّنات البناء المعمارية والإنشائية لمشاريع البناء التجارية.',
+    tagline: 'مورّد متعدد الجنسيات لمواد تشطيب البناء الفاخرة. البحرين · الإمارات · السعودية · الولايات المتحدة.',
     quickLinks: 'روابط سريعة', servicesCol: 'الخدمات', productsCol: 'المنتجات',
-    locationsCol: 'المواقع', contactCol: 'اتصل بنا', rights: 'جميع الحقوق محفوظة.',
-    headOffice: 'المكتب الرئيسي', address: '[سطر العنوان — استبدل]', phone: '+000 000 0000', email: 'hello@thebuilderssolutions.com',
+    locationsCol: 'الشركات', contactCol: 'اتصل بنا', rights: 'جميع الحقوق محفوظة.',
+    headOffice: 'المكتب الرئيسي — البحرين', address: 'البحرين · الإمارات · السعودية · الولايات المتحدة', phone: '+973 3468 5656', email: 'trade@thebuilderssolutions.com',
   },
   chat: {
     title: 'مساعد البنّائين', greeting: 'مرحباً! اسألني عن منتجاتنا أو خدماتنا أو كيفية طلب عرض سعر.',

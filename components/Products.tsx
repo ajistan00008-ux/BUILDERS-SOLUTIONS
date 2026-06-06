@@ -39,6 +39,7 @@ export function Products() {
                 image={meta[item.id]?.image || ''}
                 specs={meta[item.id]?.specifications || []}
                 comingSoon={t.comingSoon}
+                highlight={item.id === 'stern-touchless'}
               />
             </Reveal>
           ))}
@@ -49,8 +50,8 @@ export function Products() {
 }
 
 function ProductCard({
-  title, desc, image, specs, comingSoon,
-}: { title: string; desc: string; image: string; specs: string[]; comingSoon: string }) {
+  title, desc, image, specs, comingSoon, highlight,
+}: { title: string; desc: string; image: string; specs: string[]; comingSoon: string; highlight?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const rx = useMotionValue(0);
   const ry = useMotionValue(0);
@@ -73,7 +74,7 @@ function ProductCard({
       onMouseMove={onMove}
       onMouseLeave={reset}
       style={{ rotateX: sx, rotateY: sy, transformStyle: 'preserve-3d', perspective: 1000 }}
-      className="group relative h-full rounded-2xl overflow-hidden bg-white dark:bg-brand-ink border border-black/5 dark:border-white/10 hover:border-brand-gold/40 transition-colors"
+      className={`group relative h-full rounded-2xl overflow-hidden bg-white dark:bg-brand-ink border transition-colors hover:border-brand-gold/40 ${highlight ? 'border-brand-gold/50 ring-1 ring-brand-gold/30' : 'border-black/5 dark:border-white/10'}`}
     >
       <div style={{ transform: 'translateZ(25px)' }}>
         <div className="relative h-40 bg-[linear-gradient(135deg,#1a2230,#0b0e13)]">

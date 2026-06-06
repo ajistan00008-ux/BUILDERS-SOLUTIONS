@@ -27,8 +27,8 @@ export function Footer() {
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-6 gap-10">
         <div className="lg:col-span-2">
           <div className="flex items-center gap-2.5 mb-4">
-            <span className="w-9 h-9 rounded-md bg-gradient-to-br from-brand-gold to-brand-goldDark flex items-center justify-center font-black text-white text-sm">TBS</span>
-            <span className="font-extrabold tracking-tight uppercase text-sm">The Builders Solutions</span>
+            <span className="w-9 h-9 rounded-md bg-gradient-to-br from-brand-gold to-brand-goldDark flex items-center justify-center font-display text-brand-ink text-xl leading-none pt-1">BS</span>
+            <span className="font-display text-2xl leading-none"><span className="text-white">BUILDERS</span> <span className="text-brand-gold">SOLUTIONS</span></span>
           </div>
           <p className="text-sm text-white/50 leading-relaxed max-w-xs">{f.tagline}</p>
         </div>

@@ -6,6 +6,7 @@ const nextConfig = {
     // Product & project photography is served from the group's own Sanity CDN.
     remotePatterns: [
       { protocol: 'https', hostname: 'cdn.sanity.io', pathname: '/**' },
+      { protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**' },
     ],
   },
 };
