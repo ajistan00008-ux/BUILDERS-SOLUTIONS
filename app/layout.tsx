@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Providers } from '../lib/providers';
+import { Header } from '../components/Header';
+import { Footer } from '../components/Footer';
+import { WhatsAppButton } from '../components/WhatsAppButton';
+import { ChatBot } from '../components/ChatBot';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.thebuilderssolutions.com'),
@@ -38,7 +42,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: noFlash }} />
       </head>
       <body className="antialiased">
-        <Providers>{children}</Providers>
+        <Providers>
+          <Header />
+          <main className="overflow-x-hidden min-h-screen">{children}</main>
+          <Footer />
+          <WhatsAppButton />
+          <ChatBot />
+        </Providers>
       </body>
     </html>
   );

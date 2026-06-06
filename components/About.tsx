@@ -18,7 +18,7 @@ export function About() {
           <h2 className="text-3xl md:text-4xl font-black mt-3 text-brand-ink dark:text-white">{a.title}</h2>
           <p className="mt-6 text-sm md:text-base leading-relaxed text-neutral-600 dark:text-neutral-400">{a.p1}</p>
           <p className="mt-4 text-sm md:text-base leading-relaxed text-neutral-600 dark:text-neutral-400">{a.p2}</p>
-          <a href="#contact" className="mt-8 inline-flex items-center gap-2 bg-brand-ink dark:bg-white text-white dark:text-brand-ink text-xs font-bold uppercase tracking-wide px-6 py-3.5 rounded-full hover:bg-brand-gold dark:hover:bg-brand-gold dark:hover:text-white transition-colors">
+          <a href="/contact" className="mt-8 inline-flex items-center gap-2 bg-brand-ink dark:bg-white text-white dark:text-brand-ink text-xs font-bold uppercase tracking-wide px-6 py-3.5 rounded-full hover:bg-brand-gold dark:hover:bg-brand-gold dark:hover:text-white transition-colors">
             {a.cta}
             <ArrowRight width={16} height={16} className="rtl:rotate-180" />
           </a>

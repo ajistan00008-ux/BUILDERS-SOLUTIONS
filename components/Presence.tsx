@@ -34,7 +34,7 @@ export function Presence() {
           ))}
 
           <Reveal delay={0.2}>
-            <a href="#contact" className="h-40 rounded-xl bg-brand-ink text-white p-5 flex flex-col justify-between hover:bg-brand-goldDark transition-colors">
+            <a href="/contact" className="h-40 rounded-xl bg-brand-ink text-white p-5 flex flex-col justify-between hover:bg-brand-goldDark transition-colors">
               <div className="text-3xl font-black text-brand-gold">{p.items.length}+</div>
               <div>
                 <div className="text-xs uppercase tracking-wide text-white/70">{p.locationsLabel}</div>

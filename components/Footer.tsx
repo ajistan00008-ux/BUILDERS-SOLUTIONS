@@ -7,11 +7,19 @@ export function Footer() {
   const { t } = useLang();
   const f = t.footer;
 
-  const cols: { title: string; links: string[] }[] = [
-    { title: f.quickLinks, links: [t.nav.home, t.nav.about, t.nav.services, t.nav.projects] },
-    { title: f.servicesCol, links: t.services.items.map((s) => s.title) },
-    { title: f.productsCol, links: t.products.items.slice(0, 5).map((p) => p.title) },
-    { title: f.locationsCol, links: t.presence.items.map((p) => p.country) },
+  const cols: { title: string; links: { label: string; href: string }[] }[] = [
+    {
+      title: f.quickLinks,
+      links: [
+        { label: t.nav.home, href: '/' },
+        { label: t.nav.about, href: '/about' },
+        { label: t.nav.services, href: '/services' },
+        { label: t.nav.projects, href: '/projects' },
+      ],
+    },
+    { title: f.servicesCol, links: t.services.items.map((s) => ({ label: s.title, href: '/services' })) },
+    { title: f.productsCol, links: t.products.items.slice(0, 5).map((p) => ({ label: p.title, href: '/products' })) },
+    { title: f.locationsCol, links: t.presence.items.map((p) => ({ label: p.country, href: '/locations' })) },
   ];
 
   return (
@@ -31,7 +39,7 @@ export function Footer() {
             <ul className="space-y-2.5">
               {col.links.map((link, j) => (
                 <li key={j}>
-                  <a href="#" className="text-sm text-white/60 hover:text-brand-gold transition-colors">{link}</a>
+                  <a href={link.href} className="text-sm text-white/60 hover:text-brand-gold transition-colors">{link.label}</a>
                 </li>
               ))}
             </ul>

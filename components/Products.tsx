@@ -24,7 +24,7 @@ export function Products() {
               <span className="text-brand-gold text-xs font-bold uppercase tracking-[0.3em]">{p.kicker}</span>
               <h2 className="text-3xl md:text-4xl font-black mt-3 text-brand-ink dark:text-white">{p.title}</h2>
             </div>
-            <a href="#contact" className="hidden sm:inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-brand-ink dark:text-white hover:text-brand-gold transition-colors">
+            <a href="/contact" className="hidden sm:inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-brand-ink dark:text-white hover:text-brand-gold transition-colors">
               {p.viewAll} <ArrowRight width={14} height={14} className="rtl:rotate-180" />
             </a>
           </div>

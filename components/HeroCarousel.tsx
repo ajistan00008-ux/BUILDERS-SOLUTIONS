@@ -71,11 +71,11 @@ export function HeroCarousel() {
                 {slide.lead}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
-                <a href="#products" className="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-goldDark text-white text-xs font-bold uppercase tracking-wide px-6 py-3.5 rounded-full transition-colors">
+                <a href="/products" className="inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-goldDark text-white text-xs font-bold uppercase tracking-wide px-6 py-3.5 rounded-full transition-colors">
                   {slide.ctaPrimary}
                   <ArrowRight width={16} height={16} className="rtl:rotate-180" />
                 </a>
-                <a href="#about" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white text-xs font-bold uppercase tracking-wide px-6 py-3.5 rounded-full border border-white/20 transition-colors">
+                <a href="/about" className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur text-white text-xs font-bold uppercase tracking-wide px-6 py-3.5 rounded-full border border-white/20 transition-colors">
                   {slide.ctaSecondary}
                 </a>
               </div>
