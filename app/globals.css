@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Light (default) and dark theme surface tokens */
+:root {
+  --page-bg: #ffffff;
+  --page-fg: #0b0e13;
+  --muted-fg: #5b6472;
+}
+
+html.dark {
+  --page-bg: #0b0e13;
+  --page-fg: #e8ecf2;
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--page-fg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Pause marquee on hover */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar for horizontal scrollers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

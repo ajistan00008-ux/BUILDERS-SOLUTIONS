@@ -1,0 +1,10 @@
+/node_modules
+/.next
+# Nested, separate project — not part of the TBS site repo
+/allied-gulf
+/out
+/build
+next-env.d.ts
+.env*.local
+.DS_Store
+*.tsbuildinfo
