@@ -7,11 +7,13 @@ import { bhd, useCart } from './CartProvider';
 import { BottleArt } from './BottleArt';
 import { OPS, bySlug } from '../../content/rosemary';
 
+// Customer-facing only. /rosemary/plan is internal (supplier, costs, margins)
+// and is deliberately not linked from anywhere public — it is reachable by URL
+// and gated behind Basic auth in middleware.ts.
 const NAV = [
   { href: '/rosemary', label: 'Shop' },
   { href: '/rosemary#compare', label: 'Why so cheap' },
   { href: '/rosemary#faq', label: 'FAQ' },
-  { href: '/rosemary/plan', label: 'Trade plan' },
 ];
 
 function Sprig({ className = '' }: { className?: string }) {
@@ -290,7 +292,6 @@ export function StoreFooter() {
           <ul className="space-y-2 text-sm">
             <li><Link href="/rosemary#faq" className="hover:text-white">FAQ</Link></li>
             <li><Link href="/rosemary#compare" className="hover:text-white">Price comparison</Link></li>
-            <li><Link href="/rosemary/plan" className="hover:text-white">How we source it</Link></li>
             <li><a href="https://wa.me/97300000000" className="hover:text-white">WhatsApp us</a></li>
           </ul>
         </div>
