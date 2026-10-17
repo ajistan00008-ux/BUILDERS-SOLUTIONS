@@ -20,6 +20,27 @@ module.exports = {
           inkSoft: '#0d0d0d',
           inkCard: '#1a1a1a',
         },
+        // ROSEMARY.BH storefront (/rosemary) — botanical, light-first palette,
+        // deliberately unlike the Builders Solutions gold-on-black.
+        leaf: {
+          50: '#f2f7f1',
+          100: '#e0ebdd',
+          200: '#c2d8bd',
+          300: '#98bc91',
+          400: '#6d9c66',
+          500: '#4c7f47',
+          600: '#396635',
+          700: '#2d512c',
+          800: '#254124',
+          900: '#1d331e',
+          950: '#0f1c10',
+        },
+        sprig: {
+          ink: '#12180f',
+          paper: '#fbfaf5',
+          stone: '#e8e5da',
+          clay: '#b66b3f',
+        },
       },
       fontFamily: {
         display: ['var(--font-display)', 'Bebas Neue', 'sans-serif'],

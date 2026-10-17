@@ -1,10 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { Providers } from '../lib/providers';
-import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
-import { WhatsAppButton } from '../components/WhatsAppButton';
-import { ChatBot } from '../components/ChatBot';
+import { SiteChrome } from '../components/SiteChrome';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.thebuilderssolutions.com'),
@@ -49,11 +46,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="antialiased">
         <Providers>
-          <Header />
-          <main className="overflow-x-hidden min-h-screen">{children}</main>
-          <Footer />
-          <WhatsAppButton />
-          <ChatBot />
+          <SiteChrome>{children}</SiteChrome>
         </Providers>
       </body>
     </html>
