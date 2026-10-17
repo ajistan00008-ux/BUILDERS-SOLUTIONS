@@ -8,9 +8,9 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { OPS, TAX, bySlug } from '../../content/rosemary';
+import { OPS, TAX, productBySlug } from '../../content/daily';
 
-const STORAGE_KEY = 'rosemary-bh-cart';
+const STORAGE_KEY = 'daily-bh-cart';
 
 export interface CartLine {
   slug: string;
@@ -51,7 +51,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       if (raw) {
         const parsed = JSON.parse(raw);
         if (Array.isArray(parsed)) {
-          setLines(parsed.filter((l) => l && typeof l.slug === 'string' && bySlug(l.slug)));
+          setLines(parsed.filter((l) => l && typeof l.slug === 'string' && productBySlug(l.slug)));
         }
       }
     } catch {
@@ -70,7 +70,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, [lines, hydrated]);
 
   const add = useCallback((slug: string, qty = 1) => {
-    if (!bySlug(slug)) return;
+    if (!productBySlug(slug)) return;
     setLines((prev) => {
       const found = prev.find((l) => l.slug === slug);
       if (found) {
@@ -100,7 +100,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const value = useMemo<CartCtx>(() => {
     const count = lines.reduce((n, l) => n + l.qty, 0);
     const subtotal = lines.reduce((sum, l) => {
-      const sku = bySlug(l.slug);
+      const sku = productBySlug(l.slug);
       return sku ? sum + sku.priceBhd * l.qty : sum;
     }, 0);
     const delivery =

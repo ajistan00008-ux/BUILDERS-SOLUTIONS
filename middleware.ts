@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
 
 /**
- * /rosemary/plan is the internal trade plan: supplier names, FOB costs, the
+ * /daily/plan is the internal trade plan: supplier names, FOB costs, the
  * target discount off MRP, landed cost and margins. `robots: noindex` on the
  * page only keeps crawlers out — anyone holding the URL could still read it.
  *
@@ -11,7 +11,7 @@ import { NextResponse, type NextRequest } from 'next/server';
  * (all environments, including Preview) to open it.
  */
 
-const REALM = 'ROSEMARY.BH internal';
+const REALM = 'DAILY.BH internal';
 
 function unauthorized(message: string) {
   return new NextResponse(message, {
@@ -80,5 +80,5 @@ export function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/rosemary/plan', '/rosemary/plan/:path*'],
+  matcher: ['/daily/plan', '/daily/plan/:path*'],
 };

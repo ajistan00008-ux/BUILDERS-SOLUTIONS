@@ -3,8 +3,8 @@
 import React, { useMemo, useState } from 'react';
 import Link from 'next/link';
 import { bhd, useCart } from './CartProvider';
-import { BottleArt } from './BottleArt';
-import { OPS, bySlug } from '../../content/rosemary';
+import { ProductArt } from './ProductArt';
+import { OPS, productBySlug } from '../../content/daily';
 
 /**
  * No payment processor is wired up yet. Until a gateway (BenefitPay / Credimax)
@@ -46,14 +46,14 @@ export function CheckoutForm() {
   const message = useMemo(() => {
     const items = lines
       .map((l) => {
-        const sku = bySlug(l.slug);
+        const sku = productBySlug(l.slug);
         return sku ? `• ${l.qty} × ${sku.name} ${sku.size} — ${bhd(sku.priceBhd * l.qty)}` : '';
       })
       .filter(Boolean)
       .join('\n');
     const pay = PAYMENTS.find((p) => p.id === form.payment)?.label ?? 'Cash on delivery';
     return [
-      'New order — ROSEMARY.BH',
+      'New order — DAILY.BH',
       '',
       items,
       '',
@@ -91,7 +91,7 @@ export function CheckoutForm() {
           within the hour during working times.
         </p>
         <Link
-          href="/rosemary"
+          href="/daily"
           className="mt-6 inline-flex items-center rounded-full bg-leaf-600 hover:bg-leaf-700 text-white h-12 px-7 font-medium"
         >
           Back to the shop
@@ -105,10 +105,10 @@ export function CheckoutForm() {
       <div className="rounded-2xl border border-sprig-stone bg-white px-6 py-12 text-center">
         <h2 className="text-xl font-semibold text-sprig-ink">Your basket is empty</h2>
         <p className="mt-2 text-[14px] text-sprig-ink/60">
-          The 100 ml spray is BHD 1.950 and two bottles ship free.
+          The sampler box is BHD 4.950 if you are not sure where to start.
         </p>
         <Link
-          href="/rosemary#shelf"
+          href="/daily#shelf"
           className="mt-6 inline-flex items-center rounded-full bg-leaf-600 hover:bg-leaf-700 text-white h-12 px-7 font-medium"
         >
           Go to the shelf
@@ -246,12 +246,12 @@ export function CheckoutForm() {
         <h2 className="font-semibold text-sprig-ink mb-4">Order summary</h2>
         <ul className="space-y-3 mb-4">
           {lines.map((l) => {
-            const sku = bySlug(l.slug);
+            const sku = productBySlug(l.slug);
             if (!sku) return null;
             return (
               <li key={l.slug} className="flex gap-3 items-center">
                 <div className="w-12 h-14 rounded-lg bg-leaf-50 border border-sprig-stone flex items-center justify-center shrink-0">
-                  <BottleArt sku={sku} className="w-9 h-12" />
+                  <ProductArt product={sku} className="w-9 h-12" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[13px] font-medium text-sprig-ink leading-snug">{sku.name}</p>

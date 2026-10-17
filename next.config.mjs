@@ -9,6 +9,14 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.unsplash.com', pathname: '/**' },
     ],
   },
+  // The storefront began life as a single-product rosemary shop. Keep the old
+  // links working — the preview URL was shared before the rebrand.
+  async redirects() {
+    return [
+      { source: '/rosemary', destination: '/daily', permanent: true },
+      { source: '/rosemary/:path*', destination: '/daily/:path*', permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;
